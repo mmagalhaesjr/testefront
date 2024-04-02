@@ -22,5 +22,29 @@ div{
     align-items: center;
     justify-content: space-evenly;
 }
+#containerForm{
+    margin-top: 5%;
+}
 
+form{
+    margin-top: 10px;
+}
+
+
+`
+
+
+export const StyledBotao1 = styled.div`
+    margin-top: 5%;
+    background-color: ${props => props.inclui ? "blue" : "red"};
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px black;
+    color: #ffffff;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 `

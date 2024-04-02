@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import { StyledCarro } from './styled';
+import { StyledBotao1, StyledCarro } from './styled';
+
 
 export default function Carros() {
 
@@ -11,7 +12,6 @@ export default function Carros() {
 
     const url = `http://localhost:4001/carros`;
 
-    //reenderiza lista do banco de dados
     const [carros, setCarros] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,6 @@ export default function Carros() {
 
         promisse.then(res => {
             setCarros(res.data);
-            console.log(res.data);
         })
         promisse.catch(err => {
             console.error("Erro ao obter dados:", err);
@@ -34,6 +33,7 @@ export default function Carros() {
 
     function inputMarca(event) {
         setMarca(event.target.value)
+
     }
     function inputModelo(event) {
         setModelo(event.target.value)
@@ -88,7 +88,7 @@ export default function Carros() {
             marca: filtro
         };
 
-    
+
         const promisse = axios.put(url, body);
 
         promisse.then(res => {
@@ -99,38 +99,51 @@ export default function Carros() {
             });
     }
 
+
     return (
-        <StyledCarro>
-            <div id="container" >
-                {carros.length > 0 ? (
-                    <div id="container">
-                        {carros.map(car => (
-                            <div key={car.carro}>
-                                <p>Marca: {car.marca}</p>
-                                <p>Modelo: {car.modelo}</p>
-                                <p>Carro: {car.carro}</p>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <p>Nenhum carro encontrado para a marca especificada.</p>
-                )}
-            </div>
 
-            <form onSubmit={addCarros}>
-                <input onChange={inputMarca} placeholder="marca" value={marca} type="text" />
-                <input onChange={inputModelo} placeholder="modelo" value={modelo} type="text" />
-                <input onChange={inputCarro} placeholder="carro" value={carro} type="text" />
+        <>
+            <StyledCarro>
+                <div id="container" >
+                    {carros.length > 0 ? (
+                        <div id="container">
+                            {carros.map(car => (
+                                <div key={car.carro}>
+                                    <p>Marca: {car.marca}</p>
+                                    <p>Modelo: {car.modelo}</p>
+                                    <p>Carro: {car.carro}</p>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <p>Nenhum carro encontrado para a marca especificada.</p>
+                    )}
+                </div>
 
-                <button onClick={atualizarPagina} type="submit" name="submit">add carro</button>
-            </form>
+                <div id="containerForm">
+                    <form onSubmit={addCarros}>
+                        <input onChange={inputMarca} placeholder="marca" value={marca} type="text" />
+                        <input onChange={inputModelo} placeholder="modelo" value={modelo} type="text" />
+                        <input onChange={inputCarro} placeholder="carro" value={carro} type="text" />
 
-            <form onSubmit={filtraCarros}>
-                <input onChange={inputFiltro} placeholder="filtra carros por marca" value={filtro} type="text" />
-                <button type="submit" name="submit">Filtrar carro</button>
-            </form>
+                        <button onClick={atualizarPagina} type="submit" name="submit">add carro</button>
+                    </form>
+
+                    <form onSubmit={filtraCarros}>
+                        <input onChange={inputFiltro} placeholder="filtra carros por marca" value={filtro} type="text" />
+                        <button type="submit" name="submit">Filtrar carro</button>
+                    </form>
+                </div>
 
 
-        </StyledCarro>
+            </StyledCarro>
+
+
+            <StyledBotao1 inclui={carros.find(objeto => objeto.marca)}>{carros.length !== 0 ? 'disponiveis' : 'não disponiveis'}</StyledBotao1>
+
+
+
+        </>
+
     );
 }

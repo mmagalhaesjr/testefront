@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Carros from "./Pages/Carros/Carros";
+import { Login } from './Pages/Autenticar/login';
+import { Cadastro } from './Pages/Autenticar/Cadastro';
+
+
 
 function App() {
  return (
   <Router>
   <Routes>
   
-    <Route path="/carros" element={<Carros />} />
+    <Route path="/" element={<Login />} />
+    <Route path="/cadastro" element={<Cadastro />} />
    
   </Routes>
 </Router>

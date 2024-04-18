@@ -20,7 +20,6 @@ export function Cadastro() {
         }
 
         const URL = `${import.meta.env.VITE_API_BASE_URL}/singup`;
-        console.log(URL)
 
         const promise = axios.post(URL, body);
         
@@ -36,7 +35,6 @@ export function Cadastro() {
             if (err.response.data === "Usuário já cadastrado!") {
                 alert("Usuário já cadastrado!")
             }
-
         });
     }
 

@@ -3,14 +3,14 @@ import { StyledAut, StyledLink } from "./styled";
 import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
 import { useNavigate } from "react-router-dom";
-// import UserContext from "../../contexts/UserContext";
+
 
 
 export function Login() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const {setToken} = useContext(TokenContext)
-    // const {setUsuario} = useContext(UserContext)
+    
 
     const navigate = useNavigate()
 
@@ -29,6 +29,10 @@ export function Login() {
         promise.then(res => {
             setToken(res.data)
             navigate("/tarefas")
+            
+
+            
+          
         })
         promise.catch(err => {
             if (err.response.status === 404) {

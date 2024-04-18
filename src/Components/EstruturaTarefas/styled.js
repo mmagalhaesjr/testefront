@@ -45,7 +45,12 @@ justify-content: space-between;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
+}
+h1{
+    font-size: 1.5rem;
+}
+p{
+    color: #424242;
 }
 
 

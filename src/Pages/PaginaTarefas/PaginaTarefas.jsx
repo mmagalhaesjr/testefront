@@ -4,10 +4,13 @@ import { Styled } from "./styled";
 import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
 
+
 export default function PaginaTarefas() {
     const { token } = useContext(TokenContext)
-    const [tarefas, setTarefas] = useState([]);
+    
 
+    const [tarefas, setTarefas] = useState([]);
+    console.log(tarefas)
 
 
     useEffect(() => {
@@ -24,6 +27,7 @@ export default function PaginaTarefas() {
 
         promise.then(res => {
             setTarefas(res.data)
+            
         })
 
         promise.catch(err => {
@@ -44,7 +48,7 @@ export default function PaginaTarefas() {
                 </p>
             ) : (
                 tarefas.map(obj => (
-                    <EstruturaTarefas key={obj.id} nome={obj.tarefa} />
+                    <EstruturaTarefas key={obj.id} nomeTarefa={obj.tarefa} nome={obj.nome}/>
                 ))
             )}
 

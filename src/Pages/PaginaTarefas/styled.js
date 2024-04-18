@@ -4,6 +4,7 @@ import { azulEscuro } from '../../constant/constant';
 export const Styled = styled.div`
 width: 100%;
 height: 100vh;
+overflow: scroll;
 background-color: ${azulEscuro};
 
 display: flex;

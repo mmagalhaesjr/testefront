@@ -4,7 +4,7 @@ import { Cadastro } from './Pages/Autenticar/Cadastro';
 import { useState } from 'react';
 import TokenContext from './contexts/TokenContext';
 import UserContext from './contexts/UserContext';
-import PaginaTarefas from './Pages/PaginaTarefas/PaginaTarefas';
+import TodasTarefas from './Pages/TodasTarefas/TodasTarefas';
 
 
 
@@ -22,7 +22,7 @@ function App() {
 
           <Route path="/" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/tarefas" element={<PaginaTarefas />} />
+          <Route path="/tarefas" element={<TodasTarefas />} />
 
         </Routes>
       </Router>

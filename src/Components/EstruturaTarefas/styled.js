@@ -3,7 +3,7 @@ import { azulClaro } from "../../constant/constant";
 
 
 export const Styled = styled.div`
-width:400px;
+width: 90%;
 height: 200px;
 border-radius: 10px;
 background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo com transparência */
@@ -52,9 +52,11 @@ justify-content: space-between;
     justify-content: space-around;
 }
 h1{
-    font-size: 1.5rem;
+    width:150px;
+    height: fit-content;
+    font-size: 1.3rem;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 10px;   
 }
 h2{
     color: #424242;

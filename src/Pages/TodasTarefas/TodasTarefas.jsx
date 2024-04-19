@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import EstruturaTarefas from "../../Components/EstruturaTarefas/EstruturaTarefas";
-import { Styled } from "./styled";
+import { StyledTarefas } from "./styled";
 import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
+import Rodape from "../../Components/Rodape/Rodape";
 
 
-export default function PaginaTarefas() {
+export default function TodasTarefas() {
     const { token } = useContext(TokenContext)
-    
+
 
     const [tarefas, setTarefas] = useState([]);
     console.log(tarefas)
@@ -27,7 +28,7 @@ export default function PaginaTarefas() {
 
         promise.then(res => {
             setTarefas(res.data)
-            
+
         })
 
         promise.catch(err => {
@@ -40,18 +41,23 @@ export default function PaginaTarefas() {
 
 
     return (
-        <Styled>
+        <StyledTarefas>
 
-            {tarefas && tarefas.length === 0 ? (
-                <p>
-                    Não existe tarefas cadastradas
-                </p>
-            ) : (
-                tarefas.map(obj => (
-                    <EstruturaTarefas key={obj.id} nomeTarefa={obj.tarefa} nome={obj.nome}/>
-                ))
-            )}
+            <div id="container">
+                {tarefas && tarefas.length === 0 ? (
+                    <p>
+                        Não existe tarefas cadastradas
+                    </p>
+                ) : (
+                    tarefas.map(obj => (
+                        <EstruturaTarefas key={obj.id} nomeTarefa={obj.tarefa} nome={obj.nome} />
+                    ))
+                )}
+            </div>
 
-        </Styled>
+
+            <Rodape />
+
+        </StyledTarefas>
     )
 }

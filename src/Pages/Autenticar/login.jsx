@@ -3,6 +3,7 @@ import { StyledAut, StyledLink } from "./styled";
 import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
 import { useNavigate } from "react-router-dom";
+import task from '../../assets/task.png';
 
 
 
@@ -29,10 +30,7 @@ export function Login() {
         promise.then(res => {
             setToken(res.data)
             navigate("/tarefas")
-            
-
-            
-          
+        
         })
         promise.catch(err => {
             if (err.response.status === 404) {
@@ -52,7 +50,7 @@ export function Login() {
 
     return (
         <StyledAut>
-            <h1>LOGO</h1>
+             <img src={task} alt="foto" />
             <form onSubmit={logarUsuario}>
 
                 <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required/>

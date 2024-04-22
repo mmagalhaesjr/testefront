@@ -6,12 +6,12 @@ export default function EstruturaTarefas(prop) {
     return (
         <Styled>
             <div className="caixaInfo">
-                <h1>{prop.nomeTarefa}</h1>
+                <h1>{prop.titulo}</h1>
                 <h2>&#40;{prop.nome} &#41;</h2>
             </div>
 
             <div type="text" className="cxTexto">
-                    <p>{prop.nomeTarefa}</p>
+                    <p>{prop.descricao}</p>
             </div>
 
             <div className="cxIcones">

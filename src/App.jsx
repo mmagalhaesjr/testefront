@@ -5,6 +5,7 @@ import { useState } from 'react';
 import TokenContext from './contexts/TokenContext';
 import UserContext from './contexts/UserContext';
 import TodasTarefas from './Pages/TodasTarefas/TodasTarefas';
+import CriarTarefa from './Pages/CriarTarefa/CriarTarefa';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/tarefas" element={<TodasTarefas />} />
+          <Route path="/criarTarefa" element={<CriarTarefa />} />
 
         </Routes>
       </Router>

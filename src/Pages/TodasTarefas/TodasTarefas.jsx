@@ -51,7 +51,7 @@ export default function TodasTarefas() {
                     </p>
                 ) : (
                     tarefas.map(obj => (
-                        <EstruturaTarefas key={obj.id} nomeTarefa={obj.tarefa} nome={obj.nome} />
+                        <EstruturaTarefas key={obj.id} titulo={obj.titulo_tarefa} descricao={obj.descricao_tarefa}  nome={obj.nome} />
                     ))
                 )}
             </div>

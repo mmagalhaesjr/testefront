@@ -4,7 +4,7 @@ import { azulClaro } from "../../constant/constant";
 
 export const Styled = styled.div`
 width: 90%;
-height: 200px;
+min-height: 150px;
 border-radius: 10px;
 border: solid 2px #ffffff;
 background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo com transparência */
@@ -49,7 +49,7 @@ justify-content: space-between;
     border-radius: 20px;
 
     position: absolute;
-    top: 135px;
+    top: 132px;
     left: 300px;
     
     display: flex;

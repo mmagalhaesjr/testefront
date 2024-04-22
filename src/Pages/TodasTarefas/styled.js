@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { azulEscuro } from '../../constant/constant';
+import { azulEscuro,azulClaro } from '../../constant/constant';
 
 export const StyledTarefas = styled.div`
 width: 400px;
@@ -13,17 +13,23 @@ justify-content: center;
 
 #container{
     width: 100%;
-    height: 600px;
-    overflow-x: none;
-    overflow-y: scroll;
-    border: solid 2px red;
+    max-height: 80vh; 
+    overflow: auto;
 
+    
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
 }
-
+#container::-webkit-scrollbar {
+  background-color: ${azulEscuro};
+  width: 5px;
+}
+#container::-webkit-scrollbar-thumb {
+    background-color: ${azulClaro};
+    border-radius: 5px; 
+}
 
 p{
     color:#ffffff;

@@ -11,7 +11,6 @@ export default function MinhasTarefas() {
     const [tarefas, setTarefas] = useState([]);
     const { token } = useContext(TokenContext)
     const { usuario } = useContext(UserContext)
-    console.log(tarefas)
  
     const config = {
         headers: {
@@ -48,10 +47,11 @@ export default function MinhasTarefas() {
                     </p>
                 ) : (
                     tarefas.map(obj => (
-                        <EstruturaTarefas key={obj.id} titulo={obj.titulo_tarefa} descricao={obj.descricao_tarefa} nome={obj.nome} />
+                        <EstruturaTarefas key={obj.id} idTarefa={obj.id} titulo={obj.titulo_tarefa} descricao={obj.descricao_tarefa} nome={obj.nome} />
+                        
                     ))
+                    
                 )}
-
             </div>
             <Rodape />
         </Styled>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { azulEscuro, azulClaro } from '../../constant/constant'
+import {amarelo } from '../../constant/constant'
 import { Link } from "react-router-dom";
 
 export const StyledAut = styled.div`
 
-width: 500px;
+width: 400px;
 height: 100vh;
-background-color: ${azulEscuro};
+
 border-radius: 10px;
 
 display: flex;
@@ -27,10 +27,10 @@ input{
     width: 90%;
     height: 50px;
     outline: none;
-    border: none; 
-    border-bottom: 1px solid #ffffff; 
+    border: none;  
     color: #ffffff;
-    background-color:transparent;
+    background-color:#ffffff;
+   
 }
 button{
     width: 90%;
@@ -40,7 +40,7 @@ button{
     
 
     &:hover{
-        background-color:${azulClaro};
+        background-color:${amarelo};
         color: #ffffff;
     }
 }
@@ -60,7 +60,7 @@ p{
     color: #ffffff;
 
     &:hover{
-        color: ${azulClaro};
+        color: ${amarelo};
     }
 }
 
@@ -74,7 +74,7 @@ export const StyledLink = styled(Link)`
     color: #ffffff;
 
   &:hover {
-    color: ${azulClaro}; 
+    color: ${amarelo}; 
   }
   
 `

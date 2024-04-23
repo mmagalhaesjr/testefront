@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StyledAut, StyledLink } from "./styled";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import task from '../../assets/task.png'
+
 
 
 export function Cadastro() {
@@ -52,7 +52,7 @@ export function Cadastro() {
 
     return (
         <StyledAut>
-            <img src={task} alt="foto" />
+          
             <form onSubmit={cadastrarUsuario}>
 
                 <input type="text" placeholder="Nome:" value={nome} onChange={inputNome} required />

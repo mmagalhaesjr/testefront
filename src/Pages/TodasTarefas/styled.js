@@ -9,8 +9,8 @@ const fotoCaminho = `url(${foto})`;
 export const StyledTarefas = styled.div`
 width: 400px;
 height: 100vh;
-background-color: ${azulEscuro};
-background-image: ${fotoCaminho};
+/* 
+background-image: ${fotoCaminho}; */
 background-size: cover;
 background-repeat: no-repeat;
 background-position: -100px -30px;

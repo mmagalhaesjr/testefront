@@ -1,11 +1,11 @@
 import { styled } from 'styled-components';
-import { azulClaro, azulEscuro} from '../../constant/constant';
+import { azulClaro} from '../../constant/constant';
 
 
 export const Styled = styled.div`
 width: 400px;
 height: 100vh;
-background-color: ${azulEscuro};
+
 
 display: flex;
 flex-direction: column;

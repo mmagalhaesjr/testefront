@@ -8,7 +8,9 @@ export const Styled = styled.section`
 width: 100%;
 height: 10%;
 margin-top: 10px;
-background-color: blue;
+/* background-color: blue; */
+background-color: transparent;
+border-top: 2px solid #ffffff;
 
 display:flex ;
 align-items: center;

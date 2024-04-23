@@ -16,13 +16,7 @@ display:flex ;
 align-items: center;
 justify-content: center;
 
-
-
-
-
-
 `
-
 export const StyledLink = styled(Link)`
 
     width: 100%;

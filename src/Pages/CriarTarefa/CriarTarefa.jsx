@@ -3,6 +3,7 @@ import { Styled } from "./styled";
 import axios from "axios";
 import {useNavigate } from "react-router-dom";
 import TokenContext from "../../contexts/TokenContext";
+import Rodape from "../../Components/Rodape/Rodape";
 
 export default function CriarTarefa() {
     const { token } = useContext(TokenContext)
@@ -62,6 +63,8 @@ const inputDescricao = (event) => {
                 <button>ENVIAR</button>
 
             </form>
+
+            <Rodape />
 
         </Styled>
     )

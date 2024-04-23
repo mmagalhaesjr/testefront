@@ -4,6 +4,7 @@ import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
 import { useNavigate } from "react-router-dom";
 import task from '../../assets/task.png';
+import UserContext from "../../contexts/UserContext";
 
 
 
@@ -11,6 +12,8 @@ export function Login() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const {setToken} = useContext(TokenContext)
+    const { setUsuario } = useContext(UserContext)
+    const { setNome } = useContext(UserContext)
     
 
     const navigate = useNavigate()
@@ -28,8 +31,11 @@ export function Login() {
         const promise = axios.post(URL, body);
 
         promise.then(res => {
-            setToken(res.data)
+            setToken(res.data.token)
+            setUsuario(res.data.idUsuario)
+            setNome(res.data.nome)
             navigate("/tarefas")
+           
         
         })
         promise.catch(err => {

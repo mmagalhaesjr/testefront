@@ -18,8 +18,6 @@ export default function EstruturaTarefas(prop) {
                 <FaCircleCheck />
                 <FaTrash />
             </div>
-
-
         </Styled>
     )
 }

@@ -18,7 +18,7 @@ justify-content: center;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    justify-content: center;
+    justify-content: ${( {tarefas} ) => (tarefas && tarefas.length > 3 ? "flex-start" : "center")};
 }
 #container::-webkit-scrollbar {
   background-color: ${azulEscuro};

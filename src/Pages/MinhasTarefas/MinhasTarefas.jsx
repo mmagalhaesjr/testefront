@@ -39,7 +39,7 @@ export default function MinhasTarefas() {
 
 
     return (
-        <Styled>
+        <Styled tarefas={tarefas}>
             <div id="container">
                 {tarefas && tarefas.length === 0 ? (
                     <p>

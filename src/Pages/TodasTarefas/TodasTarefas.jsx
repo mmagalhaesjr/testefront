@@ -39,7 +39,7 @@ export default function TodasTarefas() {
 
 
     return (
-        <StyledTarefas>
+        <StyledTarefas tarefas={tarefas}>
 
             <div id="container">
             

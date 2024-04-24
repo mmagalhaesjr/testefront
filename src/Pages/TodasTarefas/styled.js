@@ -24,11 +24,11 @@ justify-content: center;
     width: 100%;
     height: 90%;
     overflow: auto;
-    
+ 
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    justify-content: center;
+    justify-content: ${({ tarefas }) => (tarefas && tarefas.length > 3 ? "flex-start" : "center")};
 }
 #container::-webkit-scrollbar {
   background-color: ${azulEscuro};

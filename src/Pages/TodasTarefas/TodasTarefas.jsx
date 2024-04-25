@@ -39,7 +39,7 @@ export default function TodasTarefas() {
 
 
     return (
-        <StyledTarefas tarefas={tarefas}>
+        <StyledTarefas page="TodasTarefas">
 
             <div id="container">
             
@@ -49,7 +49,14 @@ export default function TodasTarefas() {
                     </p>
                 ) : (
                     tarefas.map(obj => (
-                        <EstruturaTarefas key={obj.id} idTarefa={obj.id} titulo={obj.titulo_tarefa} descricao={obj.descricao_tarefa}  nome={obj.nome} />
+                        <EstruturaTarefas
+                        key={obj.id}
+                        idTarefa={obj.id}
+                        titulo={obj.titulo_tarefa}
+                        descricao={obj.descricao_tarefa}
+                        nome={obj.nome}
+                        pagina="TodasTarefas"
+                    />
                     ))
                 )}
             </div>

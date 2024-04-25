@@ -20,7 +20,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    color:#ffffff ;
+    color:#000000 ;
     background-color: transparent;
     
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { azulClaro } from "../../constant/constant";
+import {  azulClaro, verde } from "../../constant/constant";
 
 
 export const Styled = styled.div`
@@ -52,11 +52,28 @@ justify-content: space-between;
     top: 132px;
     left: 300px;
     
-    display: flex;
+    display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
+
+#iconecheck{
+color: #000000;
+&:hover{
+      color: ${verde}
+    }
+}
+#iconelixo{
+    color: #000000;
+&:hover{
+      color: red;
+    }
+}
+
+
+
 h1{
     width:150px;
     height: fit-content;

@@ -40,6 +40,6 @@ justify-content: center;
 }
 
 p{
-    color:#ffffff;
+    color:#000000;
 }
 `

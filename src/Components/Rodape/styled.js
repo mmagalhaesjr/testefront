@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { azulClaro } from '../../constant/constant';
+import { amarelo } from '../../constant/constant';
 import { Link } from 'react-router-dom';
 
 
@@ -36,12 +36,15 @@ export const StyledLink = styled(Link)`
     font-size: 1.5rem;
     position: relative;
     top: 5px;
+    &:hover{
+      color: ${amarelo}
+    }
 }
 
 h1{
   color: #ffffff;
   &:hover {
-    color: ${azulClaro}; 
+    color: ${amarelo}; 
   }
 }
 

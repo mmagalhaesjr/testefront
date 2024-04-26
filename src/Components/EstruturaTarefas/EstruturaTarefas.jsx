@@ -52,9 +52,9 @@ export default function EstruturaTarefas(prop) {
                 Authorization: `Bearer ${token}`
             }
         };
-
+        const data = ""
         const URL = `${import.meta.env.VITE_API_BASE_URL}/checkTarefas/${idTarefa}`
-        const promise = axios.put(URL,config)
+        const promise = axios.put(URL, data, config)
 
         promise.then(res => {
            console.log(res.data)

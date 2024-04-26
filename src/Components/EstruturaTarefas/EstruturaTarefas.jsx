@@ -65,6 +65,7 @@ export default function EstruturaTarefas(prop) {
 
         promise.then(res => {
            console.log(res.data)
+           prop.buscarTarefas()
         })
 
         promise.catch(err => {

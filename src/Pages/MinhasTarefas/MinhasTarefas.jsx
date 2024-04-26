@@ -18,11 +18,7 @@ export default function MinhasTarefas() {
         }
     };
 
-    
-    
-    useEffect(() => {
-       
-       
+    function buscarTarefas(){
         const URL = `${import.meta.env.VITE_API_BASE_URL}/minhasTarefas/${usuario}`
         const promise = axios.get(URL, config)
 
@@ -35,8 +31,11 @@ export default function MinhasTarefas() {
 
             console.log('erro agora')
         })
-
-    }, [])
+    }
+    
+    useEffect(
+        buscarTarefas,[]
+    )
 
 
     return (
@@ -53,7 +52,10 @@ export default function MinhasTarefas() {
                         idTarefa={obj.id} 
                         titulo={obj.titulo_tarefa} 
                         descricao={obj.descricao_tarefa} 
-                        nome={obj.nome} check={obj.tarefa} />
+                        nome={obj.nome} check={obj.tarefa} 
+                        buscarTarefas={buscarTarefas}
+                        />
+                        
                         
                     ))
                     

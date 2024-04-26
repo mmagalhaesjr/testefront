@@ -36,13 +36,16 @@ export function Login() {
             setNome(res.data.nome)
             navigate("/tarefas")
            
+           
         
         })
         promise.catch(err => {
+            console.log(err.data)
             if (err.response.status === 404) {
                 alert("Usuário não encontrado");
             } else {
-                console.error("Erro ao tentar fazer login:", err);
+                alert(err.response.data);
+                
             }
         });
     }

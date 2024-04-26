@@ -27,6 +27,7 @@ export default function TodasTarefas() {
         promise.then(res => {
             setTarefas(res.data)
 
+
         })
 
         promise.catch(err => {
@@ -56,6 +57,7 @@ export default function TodasTarefas() {
                         descricao={obj.descricao_tarefa}
                         nome={obj.nome}
                         pagina="TodasTarefas"
+                        check={obj.tarefa}
                     />
                     ))
                 )}

@@ -17,6 +17,7 @@ export default function MinhasTarefas() {
             Authorization: `Bearer ${token}`
         }
     };
+
     
     
     useEffect(() => {
@@ -47,7 +48,12 @@ export default function MinhasTarefas() {
                     </p>
                 ) : (
                     tarefas.map(obj => (
-                        <EstruturaTarefas key={obj.id} idTarefa={obj.id} titulo={obj.titulo_tarefa} descricao={obj.descricao_tarefa} nome={obj.nome} />
+                        <EstruturaTarefas 
+                        key={obj.id} 
+                        idTarefa={obj.id} 
+                        titulo={obj.titulo_tarefa} 
+                        descricao={obj.descricao_tarefa} 
+                        nome={obj.nome} check={obj.tarefa} />
                         
                     ))
                     

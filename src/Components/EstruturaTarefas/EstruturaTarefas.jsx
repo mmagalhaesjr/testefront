@@ -34,7 +34,6 @@ export default function EstruturaTarefas(prop) {
            
            alert('Tarefa excluida')
            navigate('/tarefas')
-        //    window.location.reload();
         })
 
         promise.catch(err => {
@@ -45,15 +44,23 @@ export default function EstruturaTarefas(prop) {
 
 
 
-    function checkTarefa(idTarefa){
-
+    function checkTarefa(idTarefa, check ){
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         };
+
+         let URL = ''
         const data = ""
-        const URL = `${import.meta.env.VITE_API_BASE_URL}/checkTarefas/${idTarefa}`
+        if(check === true){
+             URL = `${import.meta.env.VITE_API_BASE_URL}/unCheckTarefas/${idTarefa}`
+        }else{
+             URL = `${import.meta.env.VITE_API_BASE_URL}/checkTarefas/${idTarefa}`
+        }
+
+        console.log(URL)
+        
         const promise = axios.put(URL, data, config)
 
         promise.then(res => {
@@ -66,7 +73,7 @@ export default function EstruturaTarefas(prop) {
     }
 
     return (
-        <Styled pagina={prop.pagina}>
+        <Styled pagina={prop.pagina} check={prop.check}>
             <div className="caixaInfo">
                 <h1>{prop.titulo}</h1>
                 <h2>&#40;{prop.nome} &#41;</h2>
@@ -77,7 +84,7 @@ export default function EstruturaTarefas(prop) {
             </div>
 
             <div className="cxIcones">
-                <FaCircleCheck id="iconecheck" onClick={ ()=> checkTarefa(prop.idTarefa) } />
+                <FaCircleCheck id="iconecheck" onClick={ ()=> checkTarefa(prop.idTarefa, prop.check) } />
                 <FaTrash  id="iconelixo"  onClick={ ()=> deletarTarefa(prop.idTarefa) } />
             </div>
         </Styled>

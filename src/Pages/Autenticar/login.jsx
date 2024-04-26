@@ -11,14 +11,14 @@ import UserContext from "../../contexts/UserContext";
 export function Login() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-    const {setToken} = useContext(TokenContext)
+    const { setToken } = useContext(TokenContext)
     const { setUsuario } = useContext(UserContext)
     const { setNome } = useContext(UserContext)
-    
+
 
     const navigate = useNavigate()
 
-    function logarUsuario(event){
+    function logarUsuario(event) {
         event.preventDefault();
 
         const body = {
@@ -26,7 +26,7 @@ export function Login() {
             senha: senha
         }
         const URL = `${import.meta.env.VITE_API_BASE_URL}/login`;
-     
+
 
         const promise = axios.post(URL, body);
 
@@ -35,36 +35,41 @@ export function Login() {
             setUsuario(res.data.idUsuario)
             setNome(res.data.nome)
             navigate("/tarefas")
-           
-           
-        
+
+
+
         })
+       
+
         promise.catch(err => {
-            console.log(err.data)
-            if (err.response.status === 404) {
-                alert("Usuário não encontrado");
+            if (err.message == "Network Error" ) {
+               alert("Ocorreu um erro interno. Por favor, tente novamente mais tarde." )
             } else {
                 alert(err.response.data);
-                
-            }
-        });
+           }
+        })
     }
+  
 
-    const inputEmail = (event)=>{
+        
+
+
+
+    const inputEmail = (event) => {
         setEmail(event.target.value)
     }
-    const inputSenha = (event)=>{
+    const inputSenha = (event) => {
         setSenha(event.target.value)
     }
 
     return (
         <StyledAut>
-             <img src={task} alt="foto" />
+            <img src={task} alt="foto" />
             <form onSubmit={logarUsuario}>
 
-                <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required/>
+                <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required />
 
-                <input type="password" placeholder="Senha:" value={senha} onChange={inputSenha} required/>
+                <input type="password" placeholder="Senha:" value={senha} onChange={inputSenha} required />
 
                 <button type="submit">Entrar</button>
 

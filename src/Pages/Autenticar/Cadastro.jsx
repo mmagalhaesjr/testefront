@@ -24,8 +24,8 @@ export function Cadastro() {
         const URL = `${import.meta.env.VITE_API_BASE_URL}/singup`;
 
         const promise = axios.post(URL, body);
-        
-       
+
+
 
         promise.then(res => {
             alert('Usuário cadastrado com sucesso!')
@@ -36,6 +36,10 @@ export function Cadastro() {
         promise.catch(err => {
             if (err.response.data === "Usuário já cadastrado!") {
                 alert("Usuário já cadastrado!")
+            } else if (err.message == "Network Error") {
+                alert("Ocorreu um erro interno. Por favor, tente novamente mais tarde.")
+            } else {
+                alert(err.response.data);
             }
         });
     }
@@ -52,7 +56,7 @@ export function Cadastro() {
 
     return (
         <StyledAut>
-          
+
             <form onSubmit={cadastrarUsuario}>
 
                 <input type="text" placeholder="Nome:" value={nome} onChange={inputNome} required />

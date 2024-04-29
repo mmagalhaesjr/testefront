@@ -6,59 +6,61 @@ import TokenContext from "../../contexts/TokenContext";
 import EstruturaTarefas from "../../Components/EstruturaTarefas/EstruturaTarefas";
 import UserContext from "../../contexts/UserContext";
 
-
 export default function MinhasTarefas() {
     const [tarefas, setTarefas] = useState([]);
-    const { token } = useContext(TokenContext)
-    const { usuario } = useContext(UserContext)
- 
+    const [loading, setLoading] = useState(false); // Estado para controlar o carregamento
+    const { token } = useContext(TokenContext);
+    const { usuario } = useContext(UserContext);
+
     const config = {
         headers: {
             Authorization: `Bearer ${token}`
         }
     };
 
-    function buscarTarefas(){
-        const URL = `${import.meta.env.VITE_API_BASE_URL}/minhasTarefas/${usuario}`
-        const promise = axios.get(URL, config)
+    function buscarTarefas() {
+        setLoading(true); // Define o estado de carregamento como true
+
+        const URL = `${import.meta.env.VITE_API_BASE_URL}/minhasTarefas/${usuario}`;
+        const promise = axios.get(URL, config);
 
         promise.then(res => {
-            setTarefas(res.data)
+            setTarefas(res.data);
         })
-
-        promise.catch(err => {
-            console.log(err.response.data)
-
-            console.log('erro agora')
+        .catch(err => {
+            console.log(err.response.data);
+            console.log('erro agora');
         })
+        .finally(() => {
+            setLoading(false); // Define o estado de carregamento como false, independentemente do resultado da promise
+        });
     }
     
-    useEffect(
-        buscarTarefas,[]
-    )
-
+    useEffect(() => {
+        buscarTarefas();
+    }, []);
 
     return (
         <Styled tarefas={tarefas}>
             <div id="container">
-                {tarefas && tarefas.length === 0 ? (
-                    <p>
-                        Não existe tarefas cadastradas
-                    </p>
+                {loading ? ( // Se loading for true, exibe "Carregando..."
+                    <p>Carregando...</p>
                 ) : (
-                    tarefas.map(obj => (
-                        <EstruturaTarefas 
-                        key={obj.id} 
-                        idTarefa={obj.id} 
-                        titulo={obj.titulo_tarefa} 
-                        descricao={obj.descricao_tarefa} 
-                        nome={obj.nome} check={obj.tarefa} 
-                        buscarTarefas={buscarTarefas}
-                        />
-                        
-                        
-                    ))
-                    
+                    tarefas && tarefas.length === 0 ? (
+                        <p>Não existe tarefas cadastradas</p>
+                    ) : (
+                        tarefas.map(obj => (
+                            <EstruturaTarefas 
+                                key={obj.id} 
+                                idTarefa={obj.id} 
+                                titulo={obj.titulo_tarefa} 
+                                descricao={obj.descricao_tarefa} 
+                                nome={obj.nome} 
+                                check={obj.tarefa} 
+                                buscarTarefas={buscarTarefas}
+                            />
+                        ))
+                    )
                 )}
             </div>
             <Rodape />

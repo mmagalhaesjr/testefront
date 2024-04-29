@@ -9,11 +9,13 @@ import Rodape from "../../Components/Rodape/Rodape";
 export default function TodasTarefas() {
     const { token } = useContext(TokenContext)
     const [tarefas, setTarefas] = useState([]);
+    const [loading, setLoading] = useState(false); 
     
 
 
     useEffect(() => {
 
+        setLoading(true); 
 
         const config = {
             headers: {
@@ -36,36 +38,33 @@ export default function TodasTarefas() {
             console.log('erro agora')
         })
 
+        promise.finally(() => {
+            setLoading(false); // Define o estado de carregamento como false, independentemente do resultado da promise
+        });
+        
+
     }, [])
 
 
     return (
         <StyledTarefas page="TodasTarefas">
-
             <div id="container">
-            
-                {tarefas && tarefas.length === 0 ? (
-                    <p>
-                        Não existe tarefas cadastradas
-                    </p>
-                ) : (
-                    tarefas.map(obj => (
-                        <EstruturaTarefas
-                        key={obj.id}
-                        idTarefa={obj.id}
-                        titulo={obj.titulo_tarefa}
-                        descricao={obj.descricao_tarefa}
-                        nome={obj.nome}
-                        pagina="TodasTarefas"
-                        check={obj.tarefa}
-                    />
-                    ))
+                {loading ? (<p>CARREGANDO...</p>) : ( tarefas && tarefas.length === 0 ? (<p>Não existe tarefas cadastradas</p>) : (
+                        tarefas.map(obj => (
+                            <EstruturaTarefas
+                                key={obj.id}
+                                idTarefa={obj.id}
+                                titulo={obj.titulo_tarefa}
+                                descricao={obj.descricao_tarefa}
+                                nome={obj.nome}
+                                pagina="TodasTarefas"
+                                check={obj.tarefa}
+                            />
+                        ))
+                    )
                 )}
             </div>
-
-
             <Rodape />
-
         </StyledTarefas>
     )
 }

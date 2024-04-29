@@ -8,7 +8,7 @@ min-height: 150px;
 border-radius: 10px;
 border: solid 2px #ffffff;
 /* background-color: rgba(255, 255, 255, 0.5);  */
-background-color: ${prop => prop.check == true ? 'blue' : 'rgba(255, 255, 255, 0.5)'};
+background-color: ${prop => prop.check == true ? 'rgba(31, 174, 15, 0.39)' : 'rgba(255, 255, 255, 0.5)'};
    
 
 backdrop-filter: blur(10px);

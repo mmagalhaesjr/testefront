@@ -47,9 +47,11 @@ export default function MinhasTarefas() {
                     <p>Carregando...</p>
                 ) : (
                     tarefas && tarefas.length === 0 ? (
+                        
                         <p>Não existe tarefas cadastradas</p>
                     ) : (
                         tarefas.map(obj => (
+                            
                             <EstruturaTarefas 
                                 key={obj.id} 
                                 idTarefa={obj.id} 

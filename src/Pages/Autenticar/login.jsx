@@ -32,6 +32,7 @@ export function Login() {
             setUsuario(res.data.idUsuario);
             setNome(res.data.nome);
             navigate("/tarefas");
+           
         })
         .catch(err => {
             if (err.message === "Network Error") {

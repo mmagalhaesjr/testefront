@@ -29,7 +29,6 @@ export default function MinhasTarefas() {
         })
         .catch(err => {
             console.log(err.response.data);
-            console.log('erro agora');
         })
         .finally(() => {
             setLoading(false); // Define o estado de carregamento como false, independentemente do resultado da promise

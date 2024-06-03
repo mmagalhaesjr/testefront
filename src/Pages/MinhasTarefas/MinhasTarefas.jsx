@@ -57,7 +57,7 @@ export default function MinhasTarefas() {
                                 titulo={obj.titulo_tarefa} 
                                 descricao={obj.descricao_tarefa} 
                                 nome={obj.nome} 
-                                check={obj.tarefa} 
+                                check={obj.concluida} 
                                 buscarTarefas={buscarTarefas}
                             />
                         ))

@@ -25,10 +25,11 @@ export default function TodasTarefas() {
 
         const URL = `${import.meta.env.VITE_API_BASE_URL}/todasTarefas`;
         const promise = axios.get(URL, config)
+       
 
         promise.then(res => {
             setTarefas(res.data)
-
+            console.log(URL)
 
         })
 
@@ -58,7 +59,7 @@ export default function TodasTarefas() {
                                 descricao={obj.descricao_tarefa}
                                 nome={obj.nome}
                                 pagina="TodasTarefas"
-                                check={obj.tarefa}
+                                check={obj.concluida}
                             />
                         ))
                     )

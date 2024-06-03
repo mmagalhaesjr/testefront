@@ -53,13 +53,14 @@ export default function EstruturaTarefas(prop) {
 
          let URL = ''
         const data = ""
+        
         if(check === true){
              URL = `${import.meta.env.VITE_API_BASE_URL}/unCheckTarefas/${idTarefa}`
         }else{
              URL = `${import.meta.env.VITE_API_BASE_URL}/checkTarefas/${idTarefa}`
         }
 
-        console.log(URL)
+    
         
         const promise = axios.put(URL, data, config)
 

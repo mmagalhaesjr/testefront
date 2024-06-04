@@ -22,26 +22,28 @@ export const StyledLink = styled(Link)`
     width: 100%;
     text-decoration: none;
     transition: color 0.3s ease;
-    margin-left: 5%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-   
-
- 
 
   .icone{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     position: relative;
-    top: 5px;
     &:hover{
       color: ${amarelo}
     }
 }
 
 h1{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  font-size:.8rem;
   color: #ffffff;
   &:hover {
     color: ${amarelo}; 

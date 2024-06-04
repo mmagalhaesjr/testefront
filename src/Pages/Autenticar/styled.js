@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const StyledAut = styled.div`
 
-width: 400px;
+width: 100%;
 height: 100vh;
 
 border-radius: 10px;
@@ -15,7 +15,7 @@ align-items: center;
 justify-content: center;
 
 form{
-    width: 90%;
+    width: 100%;
     height: 50%;
     background-color: transparent;
     display: flex;
@@ -30,6 +30,8 @@ input{
     border: none;  
     color: #000000;
     background-color:#ffffff;
+    border-radius: 10px;
+    padding: 10px;
    
 }
 button{
@@ -37,6 +39,7 @@ button{
     height: 50px;
     border: none;
     font-size: 1rem;
+    border-radius: 10px;
     
 
     &:hover{

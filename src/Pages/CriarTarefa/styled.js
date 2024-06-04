@@ -30,18 +30,21 @@ form{
 label{
     margin-bottom: 5%;
     margin-top: 10%;
+    color: #ffffff;
 }
 
 .inputtitulo{
     width: 100%;
     height: 50px;
     outline: none;
+    border-radius: 10px;
 }
 
 .inputdescricao{
     width: 100%;
     height: 150px;
     outline: none;
+    border-radius: 10px;
 }
 
 

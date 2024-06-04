@@ -20,14 +20,19 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
+
+
 #container{
     width: 100%;
     height: 90%;
-    overflow: auto;
- 
+  
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+   
+    overflow: auto;
+
     justify-content: ${({ tarefas }) => (tarefas && tarefas.length > 3 ? "flex-start" : "center")};
 }
 #container::-webkit-scrollbar {

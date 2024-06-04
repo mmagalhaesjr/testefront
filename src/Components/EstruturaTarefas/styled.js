@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import {  azulClaro, verde } from "../../constant/constant";
+import { azulEscuro, verde } from "../../constant/constant";
 
 
 export const Styled = styled.div`
-width: 90%;
-min-height: 150px;
+width: 95%;
+min-height: 200px;
 border-radius: 10px;
 border: solid 2px #ffffff;
-/* background-color: rgba(255, 255, 255, 0.5);  */
+
 background-color: ${prop => prop.check == true ? 'rgba(31, 174, 15, 0.39)' : 'rgba(255, 255, 255, 0.5)'};
    
 
@@ -19,11 +19,12 @@ position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
+gap: 5px;
 
 .caixaInfo{
     width: 98%;
-    height: 30px;
+    height: 20%;
     border-radius: 10px;
     
     display: flex;
@@ -34,11 +35,10 @@ justify-content: space-between;
 
 .cxTexto{
     width: 100%;
-    height: 100px;
+    height: 80%;
     background-color: #ffffff6d;
     border-radius: 10px;
-    margin-bottom: 20px;
-    
+  
     display: flex;
     align-items: flex-start;
     justify-content: left;
@@ -47,16 +47,20 @@ justify-content: space-between;
 
 
 .cxIcones{
+    width: 100%;
     height:fit-content;
-    /* border:  solid 2px ${azulClaro} ; */
     border-radius: 20px;
-
-    position: absolute;
-    top: 132px;
-    left: 300px;
-    
     display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
     /* display: flex; */
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 10px;
+    gap: 10px;
+
+}
+.ico{
+    width: fit-content;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -78,14 +82,16 @@ color: #000000;
 
 
 h1{
-    width:150px;
+    width:60%;
     height: fit-content;
     font-size: 1.3rem;
     margin-left: 10px;
     margin-top: 5px;   
 }
 h2{
-    color: #424242;
+    width: 40%;
+    color: ${azulEscuro};
+    margin-bottom: 5px;
 }
 p{
     color: #000000;

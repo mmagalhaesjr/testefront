@@ -35,7 +35,7 @@ gap: 5px;
 
 .cxTexto{
     width: 100%;
-    height: 80%;
+    height: 200px;
     background-color: #ffffff6d;
     border-radius: 10px;
   
@@ -50,8 +50,7 @@ gap: 5px;
     width: 100%;
     height:fit-content;
     border-radius: 20px;
-    display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
-    /* display: flex; */
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-right: 10px;
@@ -64,16 +63,19 @@ gap: 5px;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    
 }
 
 #iconecheck{
 color: #000000;
+display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
 &:hover{
       color: ${verde}
     }
 }
 #iconelixo{
     color: #000000;
+    display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
 &:hover{
       color: red;
     }
@@ -90,7 +92,7 @@ h1{
 }
 h2{
     width: 40%;
-    color: ${azulEscuro};
+    color: ${({ pagina }) => (pagina === 'TodasTarefas' ? '#ffffff' : azulEscuro)};
     margin-bottom: 5px;
 }
 p{

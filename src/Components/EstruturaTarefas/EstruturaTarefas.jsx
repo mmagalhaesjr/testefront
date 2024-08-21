@@ -54,7 +54,7 @@ export default function EstruturaTarefas(prop) {
         let URL = ''
         const data = ""
 
-        if (check === 1) {
+        if (check === 1 || check === true) {
             URL = `${import.meta.env.VITE_API_BASE_URL}/unCheckTarefas/${idTarefa}`
         } else {
             URL = `${import.meta.env.VITE_API_BASE_URL}/checkTarefas/${idTarefa}`

@@ -15,14 +15,16 @@ backdrop-filter: blur(10px);
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
 margin-top: 10px;
 position: relative;
+overflow: hidden;
 
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
 gap: 5px;
 
-.caixaInfo{
+.cxTitulo{
     width: 98%;
     height: 20%;
     border-radius: 10px;
@@ -33,7 +35,7 @@ gap: 5px;
 }
 
 
-.cxTexto{
+.cxDescricao {
     width: 100%;
     height: 200px;
     background-color: #ffffff6d;
@@ -42,7 +44,10 @@ gap: 5px;
     display: flex;
     align-items: flex-start;
     justify-content: left;
+    flex-wrap: wrap;
+    word-wrap: break-word; 
 }
+
 
 
 
@@ -96,9 +101,12 @@ h2{
     margin-bottom: 5px;
 }
 p{
+    width: 100%;
+    height: fit-content;
     color: #000000;
     margin-top: 3%;
     margin-left: 2%;
+   
 }
 
 

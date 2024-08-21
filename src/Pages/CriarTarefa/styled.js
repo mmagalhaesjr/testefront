@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { azulClaro} from '../../constant/constant';
+import { amarelo, azulClaro} from '../../constant/constant';
 
 
 export const Styled = styled.div`
@@ -38,6 +38,7 @@ label{
     height: 50px;
     outline: none;
     border-radius: 10px;
+    border: none;
 }
 
 .inputdescricao{
@@ -45,8 +46,13 @@ label{
     height: 150px;
     outline: none;
     border-radius: 10px;
-}
+    border: none;
 
+    display: flex;
+    flex-wrap: wrap;
+    align-items:start;
+    justify-content:start;
+}
 
 button{
     background-color: #ffffff;
@@ -60,8 +66,8 @@ button{
         top:20px;
         border: none;
     &:hover{
-        background-color: ${azulClaro};
-        color:#ffffff; 
+        background-color: ${amarelo};
+        color:${azulClaro}; 
         transition:0.7s;
     }
 }

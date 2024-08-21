@@ -76,11 +76,11 @@ export default function EstruturaTarefas(prop) {
 
     return (
         <Styled pagina={prop.pagina} check={prop.check}>
-            <div className="caixaInfo">
+            <div className="cxTitulo">
                 <h1>{prop.titulo}</h1>
             </div>
 
-            <div type="text" className="cxTexto">
+            <div type="text" className="cxDescricao">
                 <p>{prop.descricao}</p>
             </div>
 

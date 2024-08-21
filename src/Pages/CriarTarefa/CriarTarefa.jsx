@@ -59,7 +59,7 @@ export default function CriarTarefa() {
                 <input type="text" onChange={inputTitulo} required className="inputtitulo" placeholder="maximo 14 caracteres" name="titulo" maxLength={14} />
 
                 <label htmlFor="descricao" className="">DESCRIÇÃO DA TAREFA</label>
-                <textarea id="msg" onChange={inputDescricao} required className="inputdescricao" placeholder="maximo 100 caracteres" name="mensagem" rows="4" cols="50"></textarea>
+                <textarea id="msg" onChange={inputDescricao} required className="inputdescricao" placeholder="maximo 100 caracteres" name="mensagem" ></textarea>
 
                 <button type="submit">{loading ? 'Enviando...' : 'ENVIAR'}</button> {/* Exibe 'Enviando...' enquanto loading for true */}
             </form>

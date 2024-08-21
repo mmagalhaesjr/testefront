@@ -11,7 +11,7 @@ export default function TodasTarefas() {
     const [tarefas, setTarefas] = useState([]);
     const [loading, setLoading] = useState(false); 
     
-
+    console.log(tarefas)
 
     useEffect(() => {
 
@@ -30,9 +30,8 @@ export default function TodasTarefas() {
         promise.then(res => {
             setTarefas(res.data)
             console.log(URL)
-
         })
-
+        
         promise.catch(err => {
             console.log(err.response.data)
 

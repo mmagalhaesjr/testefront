@@ -1,15 +1,18 @@
 import styled from "styled-components";
-import { azulEscuro, verde } from "../../constant/constant";
+import {verde } from "../../constant/constant";
 
 
 export const Styled = styled.div`
 width: 95%;
 min-height: 200px;
 border-radius: 10px;
-border: solid 2px #ffffff;
+border: solid 2px rgb(192, 192, 192);
 
-background-color: ${prop => prop.check == true ? 'rgba(31, 174, 15, 0.39)' : 'rgba(255, 255, 255, 0.5)'};
-   
+background: ${props => 
+    props.check 
+      ? 'rgba(15, 87, 7, 0.39)' 
+      : 'linear-gradient(0deg, rgba(0, 0, 0, 0.595) 0%, rgba(206, 206, 207, 0.403) 100%);'};
+  
 
 backdrop-filter: blur(10px);
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
@@ -23,6 +26,8 @@ align-items: center;
 justify-content: center;
 
 gap: 5px;
+
+
 
 .cxTitulo{
     width: 98%;
@@ -72,14 +77,14 @@ gap: 5px;
 }
 
 #iconecheck{
-color: #000000;
+color: #ffffff;
 display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
 &:hover{
       color: ${verde}
     }
 }
 #iconelixo{
-    color: #000000;
+    color: #ffffff;
     display: ${({ pagina }) => (pagina === 'TodasTarefas' ? 'none' : 'flex')};
 &:hover{
       color: red;
@@ -97,7 +102,7 @@ h1{
 }
 h2{
     width: 40%;
-    color: ${({ pagina }) => (pagina === 'TodasTarefas' ? '#ffffff' : azulEscuro)};
+    color: ${({ pagina }) => (pagina === 'TodasTarefas' ? '#ffffff' : '#d0d0d0')};
     margin-bottom: 5px;
 }
 p{

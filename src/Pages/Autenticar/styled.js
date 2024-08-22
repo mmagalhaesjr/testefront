@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {amarelo } from '../../constant/constant'
+import {rosa } from '../../constant/constant'
 import { Link } from "react-router-dom";
 
 export const StyledAut = styled.div`
 
-width: 100%;
+width: 500px;
 height: 100vh;
 
 border-radius: 10px;
@@ -13,6 +13,17 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
+background: rgb(16,105,127);
+background: radial-gradient(circle, rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
+
+@media(max-width:500px) {
+    width:100%;
+}
+
+img{
+    width: 300px;
+}
 
 form{
     width: 100%;
@@ -43,7 +54,7 @@ button{
     
 
     &:hover{
-        background-color:${amarelo};
+        background-color:${rosa};
         color: #ffffff;
     }
 }
@@ -58,14 +69,15 @@ h1{
     align-items: center;
     justify-content: center;
 }
-p{
+/* p{
     margin-top: 5%;
     color: #ffffff;
 
     &:hover{
-        color: ${amarelo};
+        color: ${rosa};
+       
     }
-}
+} */
 
 
 `
@@ -77,7 +89,7 @@ export const StyledLink = styled(Link)`
     color: #ffffff;
 
   &:hover {
-    color: ${amarelo}; 
+    color: ${rosa}; 
   }
   
 `

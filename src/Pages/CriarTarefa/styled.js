@@ -1,28 +1,41 @@
 import { styled } from 'styled-components';
-import { amarelo, azulClaro} from '../../constant/constant';
+import { rosa} from '../../constant/constant';
 
 
 export const Styled = styled.div`
-width: 400px;
+width: 500px;
 height: 100vh;
 
+border-radius: 10px;
 
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 
+background: rgb(16,105,127);
+background: radial-gradient(circle, rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
+
+@media(max-width:500px) {
+    width:100%;
+}
+
+img{
+    width: 200px;
+    position: absolute;
+    top: 0;
+}
+
 form{
     width:90%;
-    height: 100%;
+    height: 90vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
     color:#000000 ;
-    background-color: transparent;
-    
+    background-color: transparent; 
 }
 
 
@@ -66,8 +79,8 @@ button{
         top:20px;
         border: none;
     &:hover{
-        background-color: ${amarelo};
-        color:${azulClaro}; 
+        background-color: ${rosa};
+        color:#ffffff; 
         transition:0.7s;
     }
 }

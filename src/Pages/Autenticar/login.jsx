@@ -3,7 +3,7 @@ import { StyledAut, StyledLink } from "./styled";
 import axios from "axios";
 import TokenContext from "../../contexts/TokenContext";
 import { useNavigate } from "react-router-dom";
-import task from '../../assets/task.png';
+import m from '../../assets/m.png';
 import UserContext from "../../contexts/UserContext";
 
 export function Login() {
@@ -55,7 +55,7 @@ export function Login() {
 
     return (
         <StyledAut>
-            <img src={task} alt="foto" />
+            <img src={m} alt="foto" />
             <form onSubmit={logarUsuario}>
                 <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required />
                 <input type="password" placeholder="Senha:" value={senha} onChange={inputSenha} required />

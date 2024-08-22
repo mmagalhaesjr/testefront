@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StyledAut, StyledLink } from "./styled";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import task from '../../assets/task.png';
+import m from '../../assets/m.png';
 
 
 
@@ -58,7 +58,7 @@ export function Cadastro() {
     return (
         <StyledAut>
 
-<img src={task} alt="foto" />
+<img src={m} alt="foto" />
 
             <form onSubmit={cadastrarUsuario}>
 

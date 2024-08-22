@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import TokenContext from "../../contexts/TokenContext";
 import Rodape from "../../Components/Rodape/Rodape";
 
+import m from '../../assets/m.png'
+
+
 export default function CriarTarefa() {
     const { token } = useContext(TokenContext);
 
@@ -35,14 +38,14 @@ export default function CriarTarefa() {
             console.log(res.data);
             navigate("/tarefas");
         })
-        .catch(err => {
-            if (err.response.data === "Erro ao cadastrar tarefa") {
-                alert("Erro ao cadastrar tarefa");
-            }
-        })
-        .finally(() => {
-            setLoading(false); // Define o estado de carregamento como false, independentemente do resultado da promise
-        });
+            .catch(err => {
+                if (err.response.data === "Erro ao cadastrar tarefa") {
+                    alert("Erro ao cadastrar tarefa");
+                }
+            })
+            .finally(() => {
+                setLoading(false); // Define o estado de carregamento como false, independentemente do resultado da promise
+            });
     }
 
     const inputTitulo = (event) => {
@@ -54,7 +57,11 @@ export default function CriarTarefa() {
 
     return (
         <Styled>
+
+            <img src={m} alt="logo" />
+
             <form onSubmit={criarTarefa}>
+
                 <label htmlFor="titulo">TÍTULO DA TAREFA</label>
                 <input type="text" onChange={inputTitulo} required className="inputtitulo" placeholder="maximo 14 caracteres" name="titulo" maxLength={14} />
 

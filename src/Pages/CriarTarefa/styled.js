@@ -23,7 +23,7 @@ background: -moz-radial-gradient(circle,  rgba(16,105,127,1) 0%, rgba(13,80,114,
 background: -webkit-radial-gradient(circle,  rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
 background: radial-gradient(circle,  rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3a77b4",endColorstr="#000000",GradientType=1)
-
+;
 
 
 img{

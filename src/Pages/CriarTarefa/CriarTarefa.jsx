@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import TokenContext from "../../contexts/TokenContext";
 import Rodape from "../../Components/Rodape/Rodape";
 
-import m from '../../assets/m.png'
+// import m from '../../assets/m.png'
 
 
 export default function CriarTarefa() {
@@ -58,7 +58,7 @@ export default function CriarTarefa() {
     return (
         <Styled>
 
-            <img src={m} alt="logo" />
+            {/* <img src={m} alt="logo" /> */}
 
             <form onSubmit={criarTarefa}>
 

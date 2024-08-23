@@ -74,7 +74,7 @@ label{
 }
 
 button{
-    background-color: #ffffff;
+        background-color: #ffffff;
         width: 50%;
         height: 40px;
         font-size: 90%;

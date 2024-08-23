@@ -63,7 +63,7 @@ export default function CriarTarefa() {
             <form onSubmit={criarTarefa}>
 
                 <label htmlFor="titulo">TÍTULO DA TAREFA</label>
-                <input type="text" onChange={inputTitulo} required className="inputtitulo" placeholder="maximo 14 caracteres" name="titulo" maxLength={14} />
+                <input type="text" onChange={inputTitulo} required className="inputtitulo" placeholder="maximo 20 caracteres" name="titulo" maxLength={20} />
 
                 <label htmlFor="descricao" className="">DESCRIÇÃO DA TAREFA</label>
                 <textarea id="msg" onChange={inputDescricao} required className="inputdescricao" placeholder="maximo 100 caracteres" name="mensagem" ></textarea>

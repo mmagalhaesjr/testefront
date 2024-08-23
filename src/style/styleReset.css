@@ -26,6 +26,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 
+	width: 100%;
+
 	background: rgb(16,105,127);
 	background: radial-gradient(circle, rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
 	font-family: "Lexend Giga", sans-serif;

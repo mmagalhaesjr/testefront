@@ -7,7 +7,6 @@ import { azulEscuro,azulClaro } from '../../constant/constant';
 export const StyledTarefas = styled.div`
 width: 500px;
 height: 100vh;
-
 border-radius: 10px;
 
 display: flex;
@@ -17,11 +16,11 @@ justify-content: center;
 
 background: rgb(16,105,127);
 background: radial-gradient(circle, rgba(16,105,127,1) 0%, rgba(13,80,114,1) 50%, rgba(4,12,36,1) 100%);
+border: solid 2px red;
 
 @media(max-width:500px) {
     width:100%;
 }
-
 
 #container{
     width: 100%;

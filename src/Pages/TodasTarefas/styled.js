@@ -7,7 +7,7 @@ import { azulEscuro,azulClaro } from '../../constant/constant';
 export const StyledTarefas = styled.div`
 width: 100%;
 max-width: 500px;
-height: 100vh;
+height: 90vh;
 border-radius: 10px;
 
 position: absolute;

@@ -7,7 +7,7 @@ import UserContext from './contexts/UserContext';
 import TodasTarefas from './Pages/TodasTarefas/TodasTarefas';
 import CriarTarefa from './Pages/CriarTarefa/CriarTarefa';
 import MinhasTarefas from './Pages/MinhasTarefas/MinhasTarefas';
-import Teste from './Pages/Teste/Teste';
+
 
 
 
@@ -29,7 +29,7 @@ function App() {
           <Route path="/tarefas" element={<TodasTarefas />} />
           <Route path="/criarTarefa" element={<CriarTarefa />} />
           <Route path="/minhastarefas" element={<MinhasTarefas />} />
-          <Route path="/teste" element={<Teste />} />
+         
 
           
 

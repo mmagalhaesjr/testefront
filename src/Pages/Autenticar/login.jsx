@@ -59,7 +59,7 @@ export function Login() {
             <form onSubmit={logarUsuario}>
                 <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required />
                 <input type="password" placeholder="Senha:" value={senha} onChange={inputSenha} required />
-                <button type="submit">{loading ? 'CARREGANDO...' : 'Entrar'}</button> {/* Exibe 'Carregando...' enquanto loading for true */}
+                <button type="submit">{loading ? 'CARREGANDO...' : 'Entrar'}</button> 
             </form>
             <StyledLink to={'/cadastro'}>Não tem uma conta? Cadastre-se.</StyledLink>
         </StyledAut>

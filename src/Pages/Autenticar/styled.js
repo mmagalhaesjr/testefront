@@ -77,6 +77,10 @@ h1{
     justify-content: center;
 }
 
+.gif{
+    width: 100px;
+}
+
 `
 
 export const StyledLink = styled(Link)`

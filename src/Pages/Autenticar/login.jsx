@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import m from '../../assets/m.png';
 import UserContext from "../../contexts/UserContext";
 
+import gif from '../../assets/carregando.gif'
+
 export function Login() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -53,13 +55,15 @@ export function Login() {
         setSenha(event.target.value);
     }
 
+   
+
     return (
         <StyledAut>
             <img src={m} alt="foto" />
             <form onSubmit={logarUsuario}>
                 <input type="text" placeholder="Email:" value={email} onChange={inputEmail} required />
                 <input type="password" placeholder="Senha:" value={senha} onChange={inputSenha} required />
-                <button type="submit">{loading ? 'CARREGANDO...' : 'Entrar'}</button> 
+                <button type="submit">{loading ? <img className="gif" src={gif} alt="Carregando..." />  : 'Entrar'}</button> 
             </form>
             <StyledLink to={'/cadastro'}>Não tem uma conta? Cadastre-se.</StyledLink>
         </StyledAut>
